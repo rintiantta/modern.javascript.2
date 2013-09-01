@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        $.fn.pivot = function (options) {
+            // 변수를 선언합니다.
+            var $target = $(this);
+            var $items = $target.children();
+            var $container = $target.wrap('<div></div>').parent();
+            var option = { width: 500, height: 450 };
+
+            // 옵션을 처리합니다.
+            $.extend(option, options);
+
+            // 스타일을 지정합니다.
+            $target.css({
+                width: $items.length * option.width,
+                height: option.height,
+                position: 'absolute'
+            });
+
+            $items.css({
+                float: 'left',
+                width: option.width, height: option.height
+            });
+
+            $container.css({
+                overflow: 'hidden', position: 'relative',
+                width: option.width, height: option.height
+            });
+
+            // 이벤트를 연결합니다.
+            var originalLeft = 0;
+            var oldLeft = 0;
+            var nowPosition = 0;
+            var isDown = false;
+
+            $target.on('mousedown', function (event) {
+                oldLeft = originalLeft = event.clientX;
+                isDown = true;
+                event.preventDefault();
+            });
+
+            $target.on('mousemove', function (event) {
+                if (isDown) {
+                    // 변수를 선언합니다.
+                    var distance = oldLeft - event.clientX;
+                    oldLeft = event.clientX;
+
+                    // 움직입니다.
+                    $target.animate({ left: '-=' + distance }, 0);
+                    $target.stop(true);
+                }
+                event.preventDefault();
+            });
+
+            $target.on('mouseup', function (event) {
+                // 내부 함수를 선언합니다.
+                function movePosition(direction) {
+                    // 위치를 설정합니다.
+                    var changePosition = nowPosition + direction;
+                    if (0 <= changePosition && changePosition < $items.length) {
+                        nowPosition = changePosition
+                    }
+                }
+
+                // 요소의 1/4 이상 드래그를 했을 경우 피벗합니다.
+                if (originalLeft - event.clientX > option.width / 4) {
+                    movePosition(+1);
+                } else if (originalLeft - event.clientX < -option.width / 4) {
+                    movePosition(-1);
+                }
+
+                // 이동합니다.
+                $target.animate({ 'left': -nowPosition * option.width }, 'fast');
+                isDown = false;
+                event.preventDefault();
+            });
+        };
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#pivot_slider').pivot({
+                width: 700,
+                height: 450
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="pivot_slider">
+        <div>
+            <h1>Lorem ipsum dolor sit amet</h1>
+            <img src="Desert.jpg" />
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur adipiscing, ligula imperdiet porttitor gravida, lacus quam ornare velit, id egestas orci lectus ac nisi. Ut nec tortor a lectus posuere facilisis. In sem mi, tristique eu fermentum et, rhoncus ac urna. In non consectetur ligula. Ut vulputate condimentum massa, ac consequat est aliquam quis. Nam lacinia elementum mauris, a ultrices elit lacinia vel. Suspendisse ac tristique leo. Sed nec orci id magna venenatis gravida. Duis in tempor risus. Aenean nec hendrerit neque. Suspendisse elementum placerat metus, porttitor pharetra orci lobortis sit amet. Etiam id diam at dolor iaculis placerat nec sit amet ipsum. Fusce sodales ligula sit amet diam mattis mattis. Curabitur ultrices quam ut lorem gravida, vitae congue erat aliquam.</p>
+        </div>
+        <div>
+            <h1>Fusce eleifend</h1>
+            <img src="Hydrangeas.jpg" />
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur adipiscing, ligula imperdiet porttitor gravida, lacus quam ornare velit, id egestas orci lectus ac nisi. Ut nec tortor a lectus posuere facilisis. In sem mi, tristique eu fermentum et, rhoncus ac urna. In non consectetur ligula. Ut vulputate condimentum massa, ac consequat est aliquam quis. Nam lacinia elementum mauris, a ultrices elit lacinia vel. Suspendisse ac tristique leo. Sed nec orci id magna venenatis gravida. Duis in tempor risus. Aenean nec hendrerit neque. Suspendisse elementum placerat metus, porttitor pharetra orci lobortis sit amet. Etiam id diam at dolor iaculis placerat nec sit amet ipsum. Fusce sodales ligula sit amet diam mattis mattis. Curabitur ultrices quam ut lorem gravida, vitae congue erat aliquam.</p>
+        </div>
+        <div>
+            <h1>Donec venenatis mattis elit.</h1>
+            <img src="Jellyfish.jpg" />
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur adipiscing, ligula imperdiet porttitor gravida, lacus quam ornare velit, id egestas orci lectus ac nisi. Ut nec tortor a lectus posuere facilisis. In sem mi, tristique eu fermentum et, rhoncus ac urna. In non consectetur ligula. Ut vulputate condimentum massa, ac consequat est aliquam quis. Nam lacinia elementum mauris, a ultrices elit lacinia vel. Suspendisse ac tristique leo. Sed nec orci id magna venenatis gravida. Duis in tempor risus. Aenean nec hendrerit neque. Suspendisse elementum placerat metus, porttitor pharetra orci lobortis sit amet. Etiam id diam at dolor iaculis placerat nec sit amet ipsum. Fusce sodales ligula sit amet diam mattis mattis. Curabitur ultrices quam ut lorem gravida, vitae congue erat aliquam.</p>
+        </div>
+        <div>
+            <h1>Phasellus sagittis quam mi.</h1>
+            <img src="Koala.jpg" />
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur adipiscing, ligula imperdiet porttitor gravida, lacus quam ornare velit, id egestas orci lectus ac nisi. Ut nec tortor a lectus posuere facilisis. In sem mi, tristique eu fermentum et, rhoncus ac urna. In non consectetur ligula. Ut vulputate condimentum massa, ac consequat est aliquam quis. Nam lacinia elementum mauris, a ultrices elit lacinia vel. Suspendisse ac tristique leo. Sed nec orci id magna venenatis gravida. Duis in tempor risus. Aenean nec hendrerit neque. Suspendisse elementum placerat metus, porttitor pharetra orci lobortis sit amet. Etiam id diam at dolor iaculis placerat nec sit amet ipsum. Fusce sodales ligula sit amet diam mattis mattis. Curabitur ultrices quam ut lorem gravida, vitae congue erat aliquam.</p>
+        </div>
+    </div>
+</body>
+</html>

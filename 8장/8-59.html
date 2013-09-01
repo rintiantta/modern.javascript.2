@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        // 변수를 선언합니다.
+        var object = {};
+
+        // hidden 속성을 정의합니다.
+        Object.defineProperty(object, 'hidden', {
+            value: {
+                width: null
+            }
+        });
+
+        // width 속성을 정의합니다.
+        Object.defineProperty(object, 'width', {
+            get: function () { return this.hidden.width; },
+            set: function (newValue) {
+                if (newValue < 0) {
+                    // 오류 발생: 프로그램 강제 종료
+                    alert('길이는 음수일 수 없습니다.');
+                } else {
+                    this.hidden.width = newValue;
+                }
+            }
+        });
+
+        // 출력합니다: 정상 사용
+        object.width = 10;
+
+        // 출력합니다: 오류 발생
+        object.width = -10;
+    </script>
+</head>
+<body>
+
+</body>
+</html>

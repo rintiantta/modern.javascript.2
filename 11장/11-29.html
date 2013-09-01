@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        window.onload = function () {
+            var header = document.getElementById('my-header');
+
+            var handler = function () { alert('클릭'); };
+            header.attachEvent('onclick', handler);
+            header.detachEvent('onclick', handler);
+        };
+    </script>
+</head>
+<body>
+    <h1 id="my-header">Click</h1>
+</body>
+</html>

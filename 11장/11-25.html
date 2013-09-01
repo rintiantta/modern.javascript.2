@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        * { border: 3px solid black; }
+    </style>
+    <script>
+        window.onload = function () {
+            // 이벤트를 연결합니다.
+            document.getElementById('header').onclick = function () {
+                alert('header');
+            };
+            document.getElementById('paragraph').onclick = function () {
+                alert('paragraph');
+            };
+        };
+    </script>
+</head>
+<body>
+    <h1 id="header">
+        <p id="paragraph">Pagagraph</p>
+    </h1>
+</body>
+</html>

@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        window.onload = function () {
+            var header = document.getElementById('my-header');
+            // 인터넷 익스플로러의 경우 실행합니다.
+            if (header.attachEvent) {
+                var handler = function () {
+                    window.event.srcElement.style.color = 'red';
+                    window.event.srcElement.detachEvent('onclick', handler);
+                };
+                header.attachEvent('onclick', handler);
+            }
+        };
+    </script>
+</head>
+<body>
+    <h1 id="my-header">Click</h1>
+</body>
+</html>

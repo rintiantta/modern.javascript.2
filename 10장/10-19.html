@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Index</title>
+    <script>
+        window.onload = function () {
+            // 문서 객체를 가져옵니다.
+            var headers = document.getElementsByTagName('h1');
+
+            // 출력합니다.
+            var output = '';
+            for (var i in headers) {
+                output += i + '\n';
+            }
+            alert(output);
+        };
+    </script>
+</head>
+<body>
+    <h1>Header</h1>
+    <h1>Header</h1>
+</body>
+</html>

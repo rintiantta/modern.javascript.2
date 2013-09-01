@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        // 함수를 선언합니다.
+        function test(name) {
+            var output = 'Hello ' + name + ' .. !';
+            return function () {
+                alert(output);
+            };
+        }
+
+        // 변수를 선언합니다.
+        var test_1 = test('Web');
+        var test_2 = test('JavaScript');
+
+        // 함수를 호출합니다.
+        test_1();
+        test_2();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

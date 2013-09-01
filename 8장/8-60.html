@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        // 변수를 선언합니다.
+        var object = {};
+        var value = 'test';
+
+        Object.defineProperty(object, 'name', {
+            get: function () { return value; },
+            set: function (newValue) { value = newValue; },
+            configurable: true
+        });
+
+        Object.defineProperty(object, 'name', {
+            enumerable: true
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        // 변수를 선언합니다.
+        var child = window.open('', '', 'width=300, height=200');
+
+        // 출력합니다.
+        if (child) {
+            child.document.write('<h1>From Parent Window</h1>');
+        } else {
+            alert('팝업 차단을 해제해주세요.');
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

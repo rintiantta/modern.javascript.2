@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        // 생성자 함수를 선언합니다.
+        function Student(name, korean, math, english, science) {
+            this.이름 = name;
+            this.국어 = korean;
+            this.수학 = math;
+            this.영어 = english;
+            this.과학 = science;
+        }
+
+        // 인스턴스를 생성합니다.
+        var student = new Student('윤하린', 96, 98, 92, 98);
+
+        // 출력합니다.
+        alert(student instanceof Student);
+        alert(student instanceof Number);
+        alert(student instanceof String);
+        alert(student instanceof Boolean);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

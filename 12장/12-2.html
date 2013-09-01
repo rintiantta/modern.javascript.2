@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function whenClick(e) {
+            var event = window.event || e;
+            var willAlert = '';
+            willAlert += 'clientX: ' + event.clientX + '\n';
+            willAlert += 'clientY: ' + event.clientY + '\n';
+            alert(willAlert);
+        }
+    </script>
+</head>
+<body>
+    <h1 onclick="whenClick">Click</h1>
+</body>
+</html>

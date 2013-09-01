@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        // Array 생성자 함수의 프로토타입에 remove() 메서드를 추가합니다.
+        Array.prototype.remove = function (index) { this.splice(index, 1); }
+
+        // 변수를 선언합니다.
+        var array = [52, 273, 103, 32, 274, 129];
+
+        // 반복문과 조건문으로 100보다 큰 요소를 제거합니다.
+        for (var i = array.length; i >= 0; i--) {
+            if (array[i] > 100) {
+                array.remove(i);
+            }
+        }
+
+        // 출력합니다.
+        alert(array);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

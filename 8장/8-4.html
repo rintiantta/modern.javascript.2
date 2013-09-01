@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        // 변수를 만듭니다.
+        var object = { property: 273 };
+
+        // 출력합니다.
+        var output = '';
+        output += "HOP('property'): " + object.hasOwnProperty('property') + '\n';
+        output += "HOP('constructor'): " + object.hasOwnProperty('constructor') + '\n';
+        output += "PIE('property'): " + object.propertyIsEnumerable('property') + '\n';
+        output += "PIE('constructor'): " + object.propertyIsEnumerable('constructor');
+        alert(output);
+
+        // for in 반복문을 사용합니다.
+        for (var key in object) {
+            alert(object[key]);
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        // 변수를 선언합니다.
+        var object = { name: '윤인성' };
+        Object.defineProperty(object, 'region', { value: '서울특별시' });
+
+        // 설정 배열을 추출합니다.
+        var descriptors = [];
+        descriptors.push(Object.getOwnPropertyDescriptor(object, 'name'));
+        descriptors.push(Object.getOwnPropertyDescriptor(object, 'region'));
+
+        // 출력합니다.
+        var output = '';
+        for (var i in descriptors) {
+            var item = descriptors[i];
+            for (var key in item) {
+                output += key + ' : ' + item[key] + '\n';
+            }
+            output += '--------------------\n'
+        }
+        alert(output);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

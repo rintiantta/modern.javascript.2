@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        window.onload = function () {
+            // 문서 객체를 가져옵니다.
+            var buttonA = document.getElementById('button-a');
+            var buttonB = document.getElementById('button-b');
+            var counterA = document.getElementById('counter-a');
+            var counterB = document.getElementById('counter-b');
+
+            // 이벤트를 연결합니다.
+            buttonA.onclick = function () {
+                counterA.innerHTML = Number(counterA.innerHTML) + 1;
+            };
+            buttonB.onclick = function () {
+                counterB.innerHTML = Number(counterB.innerHTML) + 1;
+                buttonA.onclick();
+            };
+        };
+    </script>
+</head>
+<body>
+    <button id="button-a">ButtonA</button>
+    <button id="button-b">ButtonB</button>
+    <h1>Button A - <span id="counter-a">0</span></h1>
+    <h1>Button B - <span id="counter-b">0</span></h1>
+</body>
+</html>

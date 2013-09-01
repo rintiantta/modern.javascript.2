@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        // 변수를 선언합니다.
+        var now = new Date();
+        var before = new Date('December 9, 1991');
+
+        // 날짜 간격을 구합니다.
+        var interval = now.getTime() - before.getTime();
+        interval = Math.floor(interval / (1000 * 60 * 60 * 24));
+
+        // 출력합니다.
+        alert('Interval: ' + interval + '일');
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function registerEventListener(node, event, listener) {
+            try {
+                // 파이어폭스, 크롬, 사파리, 오페라
+                node.addEventListener(event, listener, false);
+            } catch (exception) {
+                // 인터넷 익스플로러
+                node.attachEvent('on' + event, listener);
+            }
+        }
+        window.onload = function () {
+            var header = document.getElementById('header');
+            registerEventListener(header, 'click', function () {
+                alert('Click');
+            });
+        };
+    </script>
+</head>
+<body>
+    <h1 id="header">Click</h1>
+</body>
+</html>

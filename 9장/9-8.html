@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        // 변수를 선언합니다.
+        var child = window.open('', '', 'width=300, height=200');
+        var width = screen.width;
+        var height = screen.height;
+
+        child.moveTo(0, 0);
+        child.resizeTo(width, height);
+
+        // 1초마다 함수를 실행합니다.
+        setInterval(function () {
+            child.resizeBy(-20, -20);
+            child.moveBy(10, 10);
+        }, 1000);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

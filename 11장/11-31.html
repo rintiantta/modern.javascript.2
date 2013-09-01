@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        window.onload = function () {
+            var header = document.getElementById('my-header');
+
+            header.addEventListener('click', function () {
+                this.innerHTML += '+';
+            });
+        };
+    </script>
+</head>
+<body>
+    <h1 id="my-header">Click</h1>
+</body>
+</html>

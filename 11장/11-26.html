@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        * { border: 3px solid black; }
+    </style>
+    <script>
+        window.onload = function () {
+            // 이벤트를 연결합니다.
+            document.getElementById('header').onclick = function () {
+                alert('header');
+            };
+            document.getElementById('paragraph').onclick = function (e) {
+                // 이벤트 객체를 처리합니다.
+                var event = e || window.event;
+
+                // 이벤트 발생을 알립니다.
+                alert('paragraph');
+
+                // 이벤트 전달을 제거합니다.
+                event.cancelBubble = true;
+                if (event.stopPropagation) {
+                    event.stopPropagation();
+                }
+            };
+        };
+    </script>
+</head>
+<body>
+    <h1 id="header">
+        <p id="paragraph">Pagagraph</p>
+    </h1>
+</body>
+</html>

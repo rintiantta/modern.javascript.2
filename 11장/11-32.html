@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        window.onload = function () {
+            var header = document.getElementById('my-header');
+
+            if (header.attachEvent) {
+                // 인터넷 익스플로러의 경우 실행합니다.
+                var handler = function () {
+                    window.event.srcElement.style.color = 'red';
+                    window.event.srcElement.detachEvent('onclick', handler);
+                };
+                header.attachEvent('onclick', handler);
+            } else {
+                // 그 이외의 브라우저에서 실행합니다.
+                var handler = function () {
+                    this.style.color = 'red';
+                    this.removeEventListener('click', handler);
+                };
+                header.addEventListener('click', handler);
+                header.addEventListener('click', handler);
+            }
+        };
+    </script>
+</head>
+<body>
+    <h1 id="my-header">Click</h1>
+</body>
+</html>

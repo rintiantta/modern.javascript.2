@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        // 변수를 선언합니다.
+        var object = {
+            name: 'object',
+            prop: 'object',
+            toJSON: function () {
+                return {
+                    custom: 'custom'
+                };
+            }
+        };
+
+        // 출력합니다.
+        alert(JSON.stringify(object));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

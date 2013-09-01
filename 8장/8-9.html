@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        // 변수를 선언합니다.
+        var numberFromLiteral = 273;
+        var numberFromObject = new Number(273);
+
+        // 자료형을 확인합니다.
+        if (numberFromLiteral.constructor == Number) {
+            alert('numberFromLiteral은 숫자입니다.');
+        }
+        if (numberFromObject.constructor == Number) {
+            alert('numberFromObject는 숫자입니다.');
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

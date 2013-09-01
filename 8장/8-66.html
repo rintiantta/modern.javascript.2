@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        // 변수를 선언합니다.
+        var person = {
+            name: '윤인성',
+            region: '서울특별시',
+            hobby: '기타'
+        };
+
+        Object.seal(person);
+        delete person.name;
+
+        // 출력합니다.
+        alert(person.name);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

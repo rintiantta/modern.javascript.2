@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        // 변수를 선언합니다.
+        var object = {};
+        var value = 'test';
+        Object.defineProperty(object, 'name', {
+            get: function () {
+                alert('GETTER');
+                return value;
+            },
+            set: function (newValue) {
+                alert('SETTER: ' + newValue);
+                value = newValue;
+            }
+        });
+
+        // 출력합니다.
+        object.name = 'ALPHA';
+        alert(object.name);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

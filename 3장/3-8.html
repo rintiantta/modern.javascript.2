@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        // 변수를 선언합니다.
+        var date = new Date();
+        var hour = date.getHours();
+
+        // 조건문
+        switch (true) {
+            case hour < 11:
+                // "hour < 11"가 참일 때 실행합니다.
+                alert('아침 먹을 시간입니다.');
+                break;
+            case hour < 15:
+                // "hour < 11"이 거짓이고 "hour < 15"가 참일 때 실행합니다.
+                alert('점심 먹을 시간입니다.');
+                break;
+            default:
+                // "hour < 15"가 거짓일 때 실행합니다.
+                alert('저녁 먹을 시간입니다.');
+                break;
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

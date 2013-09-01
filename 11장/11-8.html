@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        window.onload = function () {
+            document.getElementById('header').onclick = function (e) {
+                // 이벤트 객체를 설정합니다.
+                var event = e || window.event;
+
+                document.body.innerHTML = '';
+                for (var key in event) {
+                    document.body.innerHTML += '<p>' + key + ': ' + event[key] + '</p>';
+                }
+            };
+        };
+    </script>
+</head>
+<body>
+    <h1 id="header">Click</h1>
+</body>
+</html>

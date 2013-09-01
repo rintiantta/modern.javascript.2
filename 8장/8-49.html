@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        // 변수를 선언합니다.
+        var array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+        // 함수를 선언합니다.
+        function lessThanFive(element, index, array) {
+            return element < 5;
+        }
+        function lessThanTwenty(element, index, array) {
+            return element < 20;
+        }
+
+        // 메서드를 사용합니다.
+        var output1 = array.every(lessThanFive);
+        var output2 = array.every(lessThanTwenty);
+        var output3 = array.some(lessThanFive);
+        var output4 = array.some(lessThanTwenty);
+
+        // 출력합니다.
+        var output = ''
+        output += output1 + ' : ' + output2 + '\n';
+        output += output3 + ' : ' + output4 + '\n';
+        alert(output);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

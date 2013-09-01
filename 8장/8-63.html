@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        // 변수를 선언합니다.
+        var object = Object.create({}, {
+            name: { value: '윤인성', enumerable: true },
+            region: { value: '서울특별시', enumerable: true }
+        });
+
+        var person = Object.create(object, {
+            gender: { value: '남자', enumerable: true },
+            hobby: { value: '기타', enumerable: true }
+        })
+
+        // 출력합니다.
+        alert(Object.getOwnPropertyNames(person) + '\n' + Object.keys(person));
+        alert(person.name + ' : ' + person.region);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

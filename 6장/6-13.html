@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        // 변수를 선언합니다.
+        var student = {
+            이름: '연하진',
+            국어: 92, 수학: 98,
+            영어: 96, 과학: 98,
+            output: '이미있지롱'
+        };
+
+        // 출력합니다.
+        var output = '';
+        with (student) {
+            output += '이름: ' + 이름 + '\n';
+            output += '국어: ' + 국어 + '\n';
+            output += '수학: ' + 수학 + '\n';
+            output += '영어: ' + 영어 + '\n';
+            output += '과학: ' + 과학 + '\n';
+            output += '총점: ' + (국어 + 수학 + 영어 + 과학);
+        }
+        alert(output);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

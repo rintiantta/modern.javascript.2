@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Basic</title>
+    <script>
+        window.onload = function () {
+            // 변수를 선언합니다.
+            var sun = document.getElementById('sun');
+            var earth = document.getElementById('earth');
+            var moon = document.getElementById('moon');
+
+            // 문서 객체의 스타일 속성을 변경합니다.
+            sun.style.position = 'absolute';
+            earth.style.position = 'absolute';
+            moon.style.position = 'absolute';
+            sun.style.left = 250 + 'px';
+            sun.style.top = 200 + 'px';
+        };
+    </script>
+</head>
+<body>
+    <h1 id="sun">@</h1>
+    <h1 id="earth">O</h1>
+    <h1 id="moon">*</h1>
+</body>
+</html>

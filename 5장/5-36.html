@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        // 인코딩할 URL을 만듭니다.
+        var URI = 'http://hanb.co.kr?test=한글입니다.';
+
+        // 출력할 문자열을 만듭니다.
+        var output = '';
+        output += '★escape()\n'
+        output += escape(URI) + '\n\n';
+        output += '★encodeURI()\n'
+        output += encodeURI(URI) + '\n\n';
+        output += '★encodeURIComponent()\n'
+        output += encodeURIComponent(URI) + '\n\n';
+
+        // 출력합니다.
+        alert(output);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

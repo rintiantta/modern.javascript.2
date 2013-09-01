@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        // 변수를 선언합니다.
+        var output = '';
+
+        // 반복문
+        for (var i = 0; i < 15; i++) {
+            for (var j = 15; j > i; j--) {
+                output += ' ';
+            }
+            for (var k = 0; k < 2 * i - 1; k++) {
+                output += '*';
+            }
+            output += '\n';
+        }
+
+        // 출력합니다.
+        alert(output);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

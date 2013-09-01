@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        // 생성자 함수를 선언합니다.
+        function Rectangle(w, h) {
+            // 변수를 선언합니다.
+            var width = w;
+            var height = h;
+
+            // 메서드를 선언합니다.
+            this.getWidth = function () { return w; };
+            this.getHeight = function () { return h; };
+            this.setWidth = function (w) {
+                if (w < 0) {
+                    throw '길이는 음수일 수 없습니다.';
+                } else {
+                    width = w;
+                }
+            };
+            this.setHeight = function (h) {
+                if (w < 0) {
+                    throw '길이는 음수일 수 없습니다.';
+                } else {
+                    height = h;
+                }
+            };
+        }
+        Rectangle.prototype.getArea = function () {
+            return this.getWidth() * this.getHeight();
+        };
+
+        // 변수를 선언합니다.
+        var rectangle = new Rectangle(5, 7);
+        rectangle.setWidth(-2);
+
+        // 출력합니다.
+        alert('AREA: ' + rectangle.getArea());
+    </script>
+</head>
+<body>
+
+</body>
+</html>

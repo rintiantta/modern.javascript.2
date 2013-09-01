@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function whenSubmit() {
+            // 유효성 검사
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="return whenSubmit()">
+        <label for="name">이름</label><br/>
+        <input type="text" name="name" id="name" /><br/>
+        <label for="pass">비밀번호</label><br/>
+        <input type="password" name="pass" id="pass" /><br/>
+        <label for="pass-check">비밀번호 확인</label><br/>
+        <input type="password" id="pass-check" /><br/>
+        <input type="submit" value="제출" />
+    </form>
+</body>
+</html>

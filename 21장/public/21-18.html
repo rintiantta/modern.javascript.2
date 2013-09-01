@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>XMLHttpRequest</title>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        $(document).ready(function () {
+            // 변수를 선언합니다.
+            var data = {
+                name: 'RintIanTta',
+                region: 'Seoul',
+            };
+
+            // 출력합니다.            
+            $('<h1></h1>').text($.param(data)).appendTo('body');
+        });
+    </script>
+</head>
+<body>
+    <form id="my-form">
+        <table>
+            <tr>
+                <td><label for="name">Name</label></td>
+                <td><input id="name" name="name" type="text" /></td>
+            </tr>
+            <tr>
+                <td><label for="region">Region</label></td>
+                <td><input id="region" name="region" type="text" /></td>
+            </tr>
+        </table>
+        <input type="submit" value="Get Ajax String" />
+    </form>
+    <div id="wrap">
+
+    </div>
+</body>
+</html>

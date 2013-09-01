@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Colorbox</title>
+    <link rel="stylesheet" href="colorbox.css" />
+    <style>
+    #images { overflow: hidden; }
+    .flickr_image { float: left; }
+    .flickr_image>  img {
+        width: 200px; height: 120px;
+        float: left;
+    }
+</style>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="jquery.colorbox.js"></script>
+<script>
+    $(document).ready(function () {
+        $('a').colorbox({
+            inline: true,
+            width: 550
+        });
+    });
+</script>
+
+</head>
+<body>
+    <h1>jQuery Colorbox</h1>
+    <a id="colorbox" href="#dialog">Dialog with Colorbox</a>
+
+    <!-- 다이얼로그 -->
+    <div id="dialogs" style="display:none;">
+        <div id="dialog">
+            <h1>Auto OPEN Colorbox</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sit amet porta ipsum, et pretium dui. Donec et sem in magna interdum lobortis et vel nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut velit eros, tempor a metus eget, condimentum dignissim neque. Cras libero odio, lobortis non lacus at, gravida ornare enim. Cras a consectetur felis, vel cursus libero. Aenean tincidunt suscipit enim eget dapibus. Proin nec nisl ac purus ornare porttitor. Donec ornare sagittis rhoncus. Morbi vel odio nec lorem imperdiet ultricies in et turpis. Integer congue ligula vitae felis interdum, ac dapibus mauris dignissim. Nulla venenatis sapien turpis, pharetra laoreet ante ornare eget. Suspendisse suscipit euismod tortor a bibendum.</p>
+        </div>
+    </div>
+</body>
+</html>

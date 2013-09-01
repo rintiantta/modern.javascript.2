@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        $(document).ready(function () {
+            // 변수를 선언합니다.
+            var array = [
+                { name: 'Hanbit Media', link: 'http://hanb.co.kr' },
+                { name: 'Naver', link: 'http://naver.com' },
+                { name: 'Daum', link: 'http://daum.net' },
+                { name: 'Paran', link: 'http://paran.com' }
+            ];
+
+            // $.each() 메서드를 사용합니다.
+            $.each(array, function (index, item) {
+                // 변수를 선언합니다.
+                var output = '';
+
+                // 문자열을 만듭니다.
+                output += '<a href="' + item.link + '">';
+                output += '    <h1>' + item.name + '</h1>';
+                output += '</a>';
+
+                // 집어넣습니다.
+                document.body.innerHTML += output;
+            });
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

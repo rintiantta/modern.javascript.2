@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="ui-lightness/jquery-ui-1.10.3.custom.css" />
+    <style>
+        .reverse {
+            color: white;
+            background-color: black;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="jquery-ui-1.10.3.custom.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('div').hover(function () {
+                $(this).addClass('reverse', 1000);
+            }, function () {
+                $(this).removeClass('reverse', 1000);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <h1>Lorem ipsum</h1>
+        <p>Lorem ipsum dolor sit amet</p>
+    </div>
+    <div>
+        <h1>Lorem ipsum</h1>
+        <p>Lorem ipsum dolor sit amet</p>
+    </div>
+    <div>
+        <h1>Lorem ipsum</h1>
+        <p>Lorem ipsum dolor sit amet</p>
+    </div>
+</body>
+</html>

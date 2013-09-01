@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>XMLHttpRequest</title>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Ajax 이벤트 연결
+            $(document).ajaxComplete(function () {
+                $('#ajax-event').append('<h1>AjaxComplete<h1>')
+            }).ajaxError(function () {
+                $('#ajax-event').append('<h1>AjaxError<h1>')
+            }).ajaxSend(function () {
+                $('#ajax-event').append('<h1>AjaxSend<h1>')
+            }).ajaxSuccess(function () {
+                $('#ajax-event').append('<h1>AjaxSuccess<h1>')
+            }).ajaxStart(function () {
+                $('#ajax-event').append('<h1>AjaxStart<h1>')
+            });
+
+            // Ajax 수행
+            $('#wrap').load('/data.json');
+        });
+    </script>
+</head>
+<body>
+    <div id="ajax-event"></div>
+    <div id="wrap"></div>
+</body>
+</html>

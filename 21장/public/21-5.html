@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Ajax Basic</title>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: '/parameter',
+                type: 'GET',
+                data: {
+                    name: 'test',
+                    region: 'test'
+                },
+                success: function (data) {
+                    $('body').append(data);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

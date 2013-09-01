@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        $(document).ready(function () {
+            // 이벤트를 연결합니다.
+            $('h1').on('click', function () {
+                $(this).html(function (index, html) {
+                    return html + '+';
+                });
+            });
+
+            // 이벤트를 연결합니다.
+            $('h1').on({
+                mouseenter: function () { $(this).addClass('reverse'); },
+                mouseleave: function () { $(this).removeClass('reverse'); }
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Header-0</h1>
+    <h1>Header-1</h1>
+    <h1>Header-2</h1>
+</body>
+</html>

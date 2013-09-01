@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>XMLHttpRequest</title>
+</head>
+<body>
+    <script>
+        // XMLHttpRequest 객체를 생성합니다.
+        var request = new XMLHttpRequest();
+        request.open('GET', '/data.html', false);
+
+        // Ajax를 수행합니다.
+        request.send();
+
+        // 출력합니다.
+        document.body.innerHTML += request.responseText;
+    </script>
+</body>
+</html>

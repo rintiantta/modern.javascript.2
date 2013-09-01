@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        div {
+            width: 100px; height: 100px;
+            background-color: orange;
+            position: relative;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        $(document).ready(function () {
+            // 이벤트를 연결합니다.
+            $('button').click(function () {
+                // 변수를 선언합니다.
+                var html = $(this).html();
+                var evalText = "$('div')." + html;
+
+                // 메서드를 실행합니다.
+                eval(evalText);
+            });
+
+            // 애니메이션을 시작합니다.
+            setInterval(function () {
+                $('div').animate({
+                    left: '500'
+                }, 1000).animate({
+                    left: '0'
+                }, 1000);
+            }, 2000);
+        });
+    </script>
+</head>
+<body>
+    <button>stop()</button>
+    <button>stop(true)</button>
+    <button>stop(false, true)</button>
+    <button>stop(true, true)</button>
+    <div></div>
+</body>
+</html>

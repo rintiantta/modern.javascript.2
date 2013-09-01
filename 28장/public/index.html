@@ -1,0 +1,53 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Index</title>
+    <link href="/css/ui-lightness/jquery-ui-1.10.3.custom.css" rel="stylesheet" />
+    <link href="/css/ui.jqgrid.css" rel="stylesheet" />
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="/js/i18n/grid.locale-en.js"></script>
+    <script src="/js/jquery.jqGrid.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // 변수를 선언합니다.
+        var customDialog = {
+            onclickSubmit: function (params) {
+                var selectedRow = $('#grid').getGridParam('selrow');
+                rowData = $('#grid').getRowData(selectedRow);
+                return { id: rowData.id };
+            }
+        };
+
+        $('#grid').jqGrid({
+            url: '/books/get',
+            editurl: '/books/edit',
+            datatype: 'json',
+            pager: '#pager',
+            caption: 'Books',
+            height: '100%',
+            rowNum: 10,
+            rowList: [10, 20, 30],
+            colNames: ['id', 'name', 'author', 'publisher', 'isbn', 'page'],
+            colModel: [
+                { name: 'id', index: 'id', width: 30 },
+                { name: 'name', index: 'name', width: 270, editable: true, edittype: 'text' },
+                { name: 'author', index: 'author', width: 90, editable: true, edittype: 'textarea' },
+                { name: 'publisher', index: 'publisher', width: 80, editable: true, edittype: 'password' },
+                { name: 'isbn', index: 'isbn', width: 80, editable: true, edittype: 'checkbox' },
+                { name: 'page', index: 'page', width: 40, editable: true, edittype: 'file' }
+            ]
+        }).navGrid('#pager', {
+            search: true,
+            edit: true,
+            add: true,
+            del: true
+        }, customDialog, {}, customDialog);
+    });
+</script>
+</head>
+<body>
+    <table id="grid"></table>
+    <div id="pager"></div>
+</body>
+</html>

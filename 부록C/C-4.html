@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        // 출력합니다.
+        alert(document.cookie);
+    </script>
+    <script>
+        // 변수를 선언합니다.
+        var date = new Date();
+        date.setDate(date.getDate() + 7);
+
+        // 5번 반복합니다.
+        for (var i = 0; i < 5; i++) {
+            var willCookie = '';
+            willCookie += 'Name' + i + '=Value;';
+            willCookie += 'expires=' + date.toUTCString();
+
+            // 쿠키에 집어넣습니다.
+            document.cookie = willCookie;
+        }
+
+        // 출력합니다.
+        alert(document.cookie);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>XMLHttpRequest</title>
+</head>
+<body>
+    <script>
+        // XMLHttpRequest 객체를 생성하는 함수
+        function createRequest() {
+            try {
+                return new XMLHttpRequest();
+            } catch (exception) {
+                var versions = [
+                    'Msxml2.XMLHTTP.6.0',
+                    'Msxml2.XMLHTTP.5.0',
+                    'Msxml2.XMLHTTP.4.0',
+                    'Msxml2.XMLHTTP.3.0',
+                    'Msxml2.XMLHTTP',
+                    'Microsoft.XMLHttp'
+                ];
+                for (var i = 0; i < versions.length; i++) {
+                    try {
+                        return new ActiveXObject(versions[i]);
+                    } catch (e) { }
+                }
+            }
+        }
+
+        // XMLHttpRequest 객체를 생성합니다.
+        var request = createRequest();
+        request.onreadystatechange = function (event) {
+            if (request.readyState == 4) {
+                if (request.status == 200) {
+                    // 데이터를 가공합니다.
+                    var json = eval('(' + request.responseText + ')');
+                    var output = '';
+
+                    for (var i = 0; i < json.length; i++) {
+                        for (var key in json[i]) {
+                            output += '<h1>' + i + ':' + json[i][key] + '</h1>';
+                        }
+                    }
+
+                    // 출력합니다.
+                    document.body.innerHTML += output;
+                };
+            };
+        };
+        request.open('GET', '/data.json', true);
+        request.send();
+    </script>
+</body>
+</html>

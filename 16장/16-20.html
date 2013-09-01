@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        $(document).ready(function () {
+            // 이벤트를 연결합니다.
+            $('h1').click(function (event, data1, data2) {
+                alert(data1 + ' : ' + data2);
+            });
+
+            // 이벤트를 강제로 발생시킵니다.
+            $('h1').eq(1).trigger('click', [273, 52]);
+        });
+    </script>
+</head>
+<body>
+    <h1>Start: </h1>
+    <h1>Start: </h1>
+</body>
+</html>

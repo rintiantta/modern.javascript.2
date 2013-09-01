@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Reverse Ajax Client</title>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        $(document).ready(function () {
+            // 이벤트를 연결합니다.
+            $('#write_form').submit(function (event) {
+                // Ajax를 수행합니다.
+                $.post('/messages', $(this).serialize());
+
+                // 디폴트 이벤트를 제거합니다.
+                event.preventDefault();
+            });
+
+            // 1초마다 함수를 실행합니다.
+            setInterval(function () {
+                $.getJSON('/messages', {
+                    dummy: new Date().getTime()
+                }, function (data) {
+                    // #output의 내용물을 제거합니다.
+                    $('#output').empty();
+
+                    // #output에 내용물을 추가합니다.
+                    $.each(data, function (index, item) {
+                        var output = '';
+                        output += '<h2>' + item.name + '</h2>';
+                        output += '<p>' + item.content + '</p>';
+                        $('<div></div>').html(output).prependTo('#output');
+                    });
+                });
+            }, 1000);
+        });
+    </script>
+</head>
+<body>
+    <form id="write_form">
+        <table>
+            <tr>
+                <td>닉네임</td>
+                <td><input type="text" name="name"/></td>
+            </tr>
+            <tr>
+                <td>메시지</td>
+                <td><textarea name="content"></textarea></td>
+            </tr>
+        </table>
+        <input type="submit"value="글쓰기"/>
+    </form>
+    <hr/>
+    <div id="output">
+
+    </div>
+</body>
+</html>

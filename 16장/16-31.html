@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .outer {
+            width: 200px;
+            height: 200px;
+            background: orange;
+            padding: 50px;
+            margin: 10px;
+        }
+
+        .inner {
+            width: 100%;
+            height: 100%;
+            background: red;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.outer').mouseover(function () {
+                $('body').append('<h1>MOUSEOVER</h1>');
+            }).mouseenter(function () {
+                $('body').append('<h1>MOUSENTER</h1>');
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner"></div>
+    </div>
+</body>
+</html>

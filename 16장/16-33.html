@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        $(document).ready(function (event) {
+            $('textarea').keyup(function () {
+                // 남은 글자 수를 구합니다.
+                var inputLength = $(this).val().length;
+                var remain = 150 - inputLength;
+
+                // 문서 객체에 입력합니다.
+                $('h1').html(remain);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <p>지금 내 생각을</p>
+        <h1>150</h1>
+        <textarea cols="70"rows="5"></textarea>
+    </div>
+</body>
+</html>

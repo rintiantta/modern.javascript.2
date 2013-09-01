@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="jquery.cookie.js"></script>
+    <script>
+        $(document).ready(function () {
+            // 쿠키를 저장합니다.
+            $.cookie('MyKey', '안녕', {
+                expires: 7,
+                path: '/',
+                raw: true
+            });
+
+            // 출력합니다.
+            $.cookie('MyKey');
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

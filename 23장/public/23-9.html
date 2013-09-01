@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>redirect Client</title>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        $.ajax({
+            url: '/data.jsonp',
+            dataType: 'jsonp',
+            success: function (data) {
+                alert(JSON.stringify(data));
+            }
+        })
+    </script>
+</head>
+<body>
+
+</body>
+</html>

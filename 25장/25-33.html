@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery UI Basic</title>
+    <link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.3.custom.css" />
+    <style>
+        * { margin: 0px; padding: 0px; } 
+        body { font-size: 62.5%; }
+
+        .item {margin: 3px;padding: 5px;}
+        .item > img { width: 100px; height: 100px;}
+
+        #wrap { overflow: hidden; }
+        #wrap > div { float: left; }
+        #dock { position:fixed; min-height: 120px; width: 100%; bottom: 0px; z-index: 1;}
+        #dock > div { float: right; }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(document).ready(function () {
+                // 문서 객체를 생성합니다.
+                for (var i = 0; i < 21; i++) {
+                    var icon = '';
+                    icon += '<div class="ui-widget-content ui-corner-all item">';
+                    icon += '    <img src="' + i + '.png">';
+                    icon += '</div>';
+                    $('#wrap').append(icon);
+                }
+
+                // jQuery UI Draggable 플러그인을 사용합니다.
+                $('#wrap > div').draggable({
+                    helper: 'clone',
+                    zIndex: 100,
+                    scroll: false
+                });
+
+                // jQuery UI Droppable 플러그인을 사용합니다.
+                $('#dock').droppable({
+                    accept: '#wrap > div',
+                    drop: function (event, ui) {
+                        $(ui.draggable).fadeOut(function () {
+                            $(this).appendTo('#dock').fadeIn();
+                        });
+                    }
+                });
+
+                $('body').droppable({
+                    accept: '#dock > div',
+                    drop: function (event, ui) {
+                        $(ui.draggable).fadeOut(function () {
+                            $(this).appendTo('#wrap').fadeIn();
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+
+    </div>
+    <div id="dock" class="ui-state-error">
+
+    </div>
+</body>
+</html>

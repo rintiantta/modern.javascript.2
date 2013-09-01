@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(document).on('touchstart', function (e) {
+                $('body').append('<h1>touch Start</h1>');
+            });
+
+            $(document).on('touchmove', function (e) {
+                $('body').append('<h1>touch Move</h1>');
+            });
+
+            $(document).on('touchend', function (e) {
+                $('body').append('<h1>touch End</h1>');
+            });
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

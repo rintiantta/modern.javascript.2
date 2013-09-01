@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        div {
+            width: 50px; height: 50px;
+            background-color: orange;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('div').click(function () {
+                // 변수를 선언합니다.
+                var width = $(this).css('width');
+                var height = $(this).css('height');
+            });
+        });
+    </script>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

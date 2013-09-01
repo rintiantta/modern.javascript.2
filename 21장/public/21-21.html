@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>XMLHttpRequest</title>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#my-form').submit(function (event) {
+                // 입력 양식의 value 속성을 가져옵니다.
+                var name = $('#name').val();
+                var region = $('#region').val();
+
+                // Ajax 요청을 수행합니다.
+                var url = '/parameter';
+                var data = { name: name, region: region };
+                var params = $.param(data);
+                $('#wrap').load(url, params);
+
+                // 기본 이벤트를 제거합니다.
+                event.preventDefault();
+            });
+        });
+    </script>
+</head>
+<body>
+    <form id="my-form">
+        <table>
+            <tr>
+                <td><label for="name">Name</label></td>
+                <td><input id="name" name="name" type="text" /></td>
+            </tr>
+            <tr>
+                <td><label for="region">Region</label></td>
+                <td><input id="region" name="region" type="text" /></td>
+            </tr>
+        </table>
+        <input type="submit" value="Get Ajax String" />
+    </form>
+    <div id="wrap">
+
+    </div>
+</body>
+</html>

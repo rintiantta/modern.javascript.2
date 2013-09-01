@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   <script>
+        function addComma(number) {
+            var regExp = /(^[+-]?\d+)(\d{3})/;
+            var string = String(number);
+            while (regExp.test(string)) {
+                string = string.replace(regExp, '$1,$2');
+            }
+            return string;
+        }
+        alert(addComma('1000000000'));
+    </script>
+</head>
+<body>
+</body>
+</html>

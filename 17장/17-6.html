@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        * { margin: 0px; padding: 0px; }
+        ul { list-style:none; }
+        img { width: 500px; height: 350px; }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="jquery.innerfade.js"></script>
+    <script>
+        $(document).ready(function () {
+            // innerfade 플러그인을 적용합니다.
+            $('#inner-fade').innerfade({
+                animationtype: 'fade',
+                speed: 750,
+                timeout: 2000,
+                type: 'random',
+                containerheight: '350px'
+            });
+        });
+    </script>
+</head>
+<body>
+    <ul id="inner-fade">
+        <li><img src="Chrysanthemum.jpg" /></li>
+        <li><img src="Desert.jpg" /></li>
+        <li><img src="Hydrangeas.jpg" /></li>
+        <li><img src="Jellyfish.jpg" /></li>
+        <li><img src="Koala.jpg" /></li>
+        <li><img src="Lighthouse.jpg" /></li>
+        <li><img src="Penguins.jpg" /></li>
+    </ul>
+</body>
+</html>

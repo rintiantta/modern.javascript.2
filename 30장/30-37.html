@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Mobile Basic</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0-alpha.2/jquery.mobile-1.4.0-alpha.2.min.css">
+    <style>
+
+    </style>
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.0-alpha.2/jquery.mobile-1.4.0-alpha.2.min.js"></script>
+    <script>
+
+    </script>
+</head>
+<body>
+    <!-- 첫 번째 페이지 -->
+    <div data-role="page">
+        <div data-role="panel" data-display="push" data-position="right" id="panel">
+            <h1>Panel</h1>
+            <a href="#panel" data-rel="close">Close Panel</a>
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div data-role="header" data-theme="b">
+            <h1>Mobile</h1>
+        </div>
+        <div data-role="content">
+            <a href="#panel" class="btn">Open Panel</a>
+        </div>
+    </div>
+</body>
+</html>

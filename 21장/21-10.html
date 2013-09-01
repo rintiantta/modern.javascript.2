@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Ajax Basic</title>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: 'data.xml',
+                success: function (data) {
+                    $(data).find('product').each(function () {
+                        $(this).find('name').text()
+                        $(this).find('price').text()
+                    });
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

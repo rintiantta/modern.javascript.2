@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery UI Basic</title>
+    <link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.3.custom.css" />
+    <style>
+        body { font-size: 62.5% }
+        h1 { text-align:center; }
+        input[type="text"], label {
+            margin-bottom: 12px; padding: .4em; 
+            width: 95%;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // 이벤트를 연결합니다.
+            $('#open-button').click(function () {
+                $('#dialog').dialog('open');
+            });
+
+            // jQuery UI Dialog 플러그인
+            $('#dialog').dialog({
+                autoOpen: false,
+                buttons: {
+                    submit: function () {
+                        // 변수를 선언합니다.
+                        var eventName = $('#event-name').val();
+                        var eventDate = $('#event-date').val();
+
+                        // 출력합니다.
+                        $('<h1></h1>').html(eventName + ' : ' + eventDate).appendTo('#output');
+
+                        // 다이얼로그를 닫습니다.
+                        $('#event-name').val('');
+                        $('#event-date').val('');
+                        $('#dialog').dialog('close');
+                    },
+                    reset: function () {
+                        $('#event-name').val('');
+                        $('#event-date').val('');
+                    },
+                    cancel: function () {
+                        $('#event-name').val('');
+                        $('#event-date').val('');
+                        $('#dialog').dialog('close');
+                    }
+                },
+                modal: true
+            });
+
+            // jQuery UI DatePicker 플러그인
+            $('#event-date').datepicker({
+                dateFormat: 'yy년 mm월 dd일',
+                numberOfMonths: 3
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1 id="open-button">일정 생성</h1>
+    <hr/>
+    <div id="output"></div>
+    <!-- 다이얼로그 -->
+    <div id="dialog" title="jQuery UI dialog">
+        <h1>Hello jQuery UI .. !</h1>
+        <label for="event-name">일정 이름</label>
+        <input id="event-name" type="text" />
+        <label for="event-date">날짜</label>
+        <input id="event-date" type="text" />
+    </div>
+</body>
+</html>

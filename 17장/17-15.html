@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        div {
+            width: 50px; height: 50px;
+            background-color:orange;
+            position: relative;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('div').click(function () {
+                $(this).animate({
+                    left: '+=60'
+                }, 2000).animate({
+                    width: '+=60'
+                }, 2000).animate({
+                    height: '+=60'
+                }, 2000);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

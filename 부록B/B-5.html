@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   <script>
+       // 변수를 선언합니다.
+       var regExp = /a/;
+       var string = 'Javascript jQuery Ajax';
+
+       // 메서드를 사용합니다.
+       var output = string.replace(regExp, function (value) {
+           return '+' + value + '+';
+       });
+
+       // 출력합니다.
+       alert(output);
+    </script>
+</head>
+<body>
+</body>
+</html>

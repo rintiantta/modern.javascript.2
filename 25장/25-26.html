@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery UI Basic</title>
+    <link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.3.custom.css" />
+    <style>
+        .box { width: 100px; height: 100px; float: left; }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // jQuery UI Draggable 플러그인을 사용합니다.
+            $('div.box').draggable({
+                grid: [102, 102],
+                stop: function (event, ui) {
+
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="box ui-widget-content"></div>
+    <div class="box ui-widget-content"></div>
+    <div class="box ui-widget-content"></div>
+    <div class="box ui-widget-content"></div>
+</body>
+</html>

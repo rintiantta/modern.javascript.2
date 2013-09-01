@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        // 변수를 선언합니다.
+        var xml = '';
+        xml += '<friends>';
+        xml += '    <friend>';
+        xml += '        <name>연하진</name>';
+        xml += '        <language>Ruby</language>';
+        xml += '    </friend>';
+        xml += '    <friend>';
+        xml += '        <name>윤명월</name>';
+        xml += '        <language>Basic</language>';
+        xml += '    </friend>';
+        xml += '    <friend>';
+        xml += '        <name>윤하린</name>';
+        xml += '        <language>C#</language>';
+        xml += '    </friend>';
+        xml += '</friends>';
+
+        $(document).ready(function () {
+            // 변수를 선언합니다.
+            var xmlDoc = $.parseXML(xml);
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

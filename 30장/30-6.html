@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script>
+        // 윈도우가 회전될 때
+        $(window).on('orientationchange', function () {
+            var output = '<h1>Orientation</h1>';
+
+            // 회전 각도에 따라 조건
+            switch (window.orientation) {
+                case 0:
+                    output += '<h2>Portrait</h2>';
+                    break;
+                case -90:
+                    output += '<h2>Landscape</h2>';
+                    output += '<h2>right, screen turned clockwise</h2>';
+                    break;
+                case 90:
+                    output += '<h2>Landscape</h2>';
+                    output += '<h2>left, screen turned counterclockwise</h2>';
+                    break;
+                case 180:
+                    output += '<h2>Portrait</h2>';
+                    output += '<h2>upside-down portrait</h2>';
+                    break;
+            }
+
+            // 출력
+            $('body').html(output);
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

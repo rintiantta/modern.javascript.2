@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>XMLHttpRequest</title>
+    <script src="xml2json.js"></script>
+</head>
+<body>
+    <script>
+        // XMLHttpRequest 객체를 생성하는 함수
+        function createRequest() {
+            try {
+                return new XMLHttpRequest();
+            } catch (exception) {
+                var versions = [
+                    'Msxml2.XMLHTTP.6.0',
+                    'Msxml2.XMLHTTP.5.0',
+                    'Msxml2.XMLHTTP.4.0',
+                    'Msxml2.XMLHTTP.3.0',
+                    'Msxml2.XMLHTTP',
+                    'Microsoft.XMLHttp'
+                ];
+                for (var i = 0; i < versions.length; i++) {
+                    try {
+                        return new ActiveXObject(versions[i]);
+                    } catch (e) { }
+                }
+            }
+        }
+
+        // XMLHttpRequest 객체를 생성합니다.
+        var request = createRequest();
+        request.onreadystatechange = function (event) {
+            if (request.readyState == 4) {
+                if (request.status == 200) {
+                    // 변수를 선언합니다.
+                    var json = xml2json.parser(request.responseText);
+
+                    // 이용합니다.
+                    for (var i = 0; i < json.products; i++) {
+                        document.body.innerHTML += '<h1>' + json.products[i].name + '</h1>';
+                        document.body.innerHTML += '<h2>' + json.products[i].price + '</h2>';
+                    }
+                }
+            };
+        };
+        request.open('GET', '/data.xml', true);
+        request.send();
+    </script>
+</body>
+</html>

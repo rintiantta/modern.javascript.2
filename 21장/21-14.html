@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>XMLHttpRequest</title>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#get').click(function () {
+                $.ajax({
+                    url: '/products',
+                    type: 'get',
+                    dataType: 'text',
+                    success: function (data) {
+                        $('#output').val(data);
+                    }
+                });
+            });
+
+            $('#post').click(function () {
+                $.ajax({
+                    url: '/products',
+                    type: 'post',
+                    dataType: 'text',
+                    data: {
+                        name: $('#name').val(),
+                        price: $('#price').val()
+                    },
+                    success: function (data) {
+                        $('#output').val(data);
+                    }
+                });
+            });
+
+            $('#put').click(function () { });
+            $('#delete').click(function () { });
+        });
+    </script>
+</head>
+<body>
+    <button id="get">GET</button>
+    <button id="post">POST</button>
+    <button id="put">PUT</button>
+    <button id="delete">DELETE</button>
+    <h1>input</h1>
+    <input id="name" />
+    <input id="price" />
+    <h1>output</h1>
+    <textarea id="output" disabled="disabled" cols="40" rows="5"></textarea>
+</body>
+</html>

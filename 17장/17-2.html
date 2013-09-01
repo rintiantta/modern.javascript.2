@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        // 이벤트를 연결합니다.
+        $(document).ready(function () {
+            // 이벤트를 연결합니다.
+            $('button').click(function () {
+                // 간단한 효과를 적용합니다.
+                $('.page').toggle('slow');
+            });
+        });
+    </script>
+</head>
+<body>
+    <button>Toggle Show</button>
+    <div class="page">
+        <h1>Lorem ipsum dolor sit amet</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+    </div>
+</body>
+</html>

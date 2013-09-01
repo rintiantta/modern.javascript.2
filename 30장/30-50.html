@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Mobile Basic</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0-alpha.2/jquery.mobile-1.4.0-alpha.2.min.css">
+    <style>
+
+    </style>
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script>
+        $(document).on('mobileinit', function () {
+            alert('MOBILE INIT');
+        });
+        $(document).on({
+            pagebeforecreate: function () { alert('PAGE BEFORE CREATE'); },
+            pagecreate: function () { alert('PAGE CREATE'); },
+            pagebeforechange: function () { alert('PAGE BEFORE CHANGE'); },
+            pagechange: function () { alert('PAGE CHANGE'); }
+        });
+    </script>
+    <script src="http://code.jquery.com/mobile/1.4.0-alpha.2/jquery.mobile-1.4.0-alpha.2.min.js"></script>
+</head>
+<body>
+    <!-- 첫 번째 페이지 -->
+    <div data-role="page">
+        <div data-role="header">
+            <h1>FIRST</h1>
+        </div>
+        <div data-role="content">
+            <a href="#second-page" data-role="button">To Second Page</a>
+        </div>
+    </div>
+
+    <!-- 두 번째 페이지 -->
+    <div data-role="page" id="second-page" data-add-back-btn="true">
+        <div data-role="header">
+            <h1>SECOND</h1>
+        </div>
+        <div data-role="content"></div>
+    </div>
+</body>
+</html>

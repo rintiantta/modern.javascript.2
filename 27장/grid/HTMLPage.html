@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>w2ui Basic</title>
+    <link rel="stylesheet" href="w2ui-1.2.css" />
+    <style>
+                #wrap {
+            margin: 0 auto;
+            width: 760px;
+            height: 200px;
+        }
+
+    </style>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="w2ui-1.2.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#wrap').w2grid({
+            name: 'grid',
+            show: {
+                header: true,
+                toolbar: true,
+                footer: true,
+                columnHeaders: true,
+                lineNumbers: true,
+                expandColumn: true,
+                selectColumn: true,
+                emptyRecords: true,
+                toolbarReload: true,
+                toolbarColumns: true,
+                toolbarSearch: true,
+                toolbarAdd: true,
+                toolbarDelete: true,
+                toolbarSave: true
+            },
+
+columns: [
+    { field: 'name', caption: '도서명', size: '40%', editable: { type: 'text' } },
+    { field: 'author', caption: '저자', size: '10%', editable: { type: 'text' } },
+    { field: 'publisher', caption: '출판사', size: '20%', editable: { type: 'text' } },
+    { field: 'price', caption: '가격', size: '10%', editable: { type: 'text' } },
+    { field: 'point', caption: '판매 지수', size: '20%', editable: { type: 'text' } }
+],
+            records: [{
+                recid: 1,
+                name: '모던 웹 디자인을 위한 HTML5 + CSS3 입문',
+                author: '윤인성',
+                publisher: '한빛미디어',
+                price: 30000,
+                point: 30400
+            }, {
+                recid: 2,
+                name: '모던 웹을 위한 JavaScript + jQuery 입문',
+                author: '윤인성',
+                publisher: '한빛미디어',
+                price: 32000,
+                point: 24000
+            }, {
+                recid: 3,
+                name: '모던 웹을 위한 Node.js 프로그래밍 입문',
+                author: '윤인성',
+                publisher: '한빛미디어',
+                price: 24000,
+                point: 12200
+            }],
+            onAdd: function (target, eventData) {
+                this.add({
+                    recid: this.total + 1,
+                    name: '[입력]',
+                    author: '[입력]',
+                    publisher: '[입력]',
+                    price: '[입력]',
+                    point: '[입력]'
+                });
+            }
+,
+            onChange: function (target, eventData) {
+                alert(JSON.stringify(this.getChanged()));
+            }
+,
+            onDelete: function (target, eventData) { }
+        });
+
+    });
+</script>
+</head>
+<body>
+    <div id="wrap"></div>
+</body>
+</html>

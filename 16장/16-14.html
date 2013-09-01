@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        $(document).ready(function () {
+            // 변수를 선언합니다.
+            var canvas = document.getElementById('canvas');
+            var context = canvas.getContext('2d');
+
+            // 이벤트를 연결합니다.
+            $(canvas).on({
+                mousedown: function (event) { },
+                mouseup: function (event) { }
+            });
+        });
+    </script>
+</head>
+<body>
+    <canvas id="canvas" width="700" height="400" style="border: 3px solid black">
+
+    </canvas>
+</body>
+</html>

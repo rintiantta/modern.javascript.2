@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function setCookie(name, value, day) {
+            // 변수를 선언합니다.
+            var date = new Date();
+            date.setDate(date.getDate() + day);
+
+            var willCookie = '';
+            willCookie += name + '=' + encodeURIComponent(value) + ';';
+            willCookie += 'expires=' + date.toUTCString() + '';
+
+            // 쿠키에 집어넣습니다.
+            document.cookie = willCookie;
+        }
+
+        function getCookie(name) {
+            // 변수를 선언합니다.
+            var cookies = document.cookie.split(';');
+
+            // 쿠키를 추출합니다.
+            for (var i in cookies) {
+                if (cookies[i].search(name) != -1) {
+                    return decodeURIComponent(cookies[i].replace(name + '=', ''));
+                }
+            }
+        }
+
+        function removeCookie(name) {
+            // 변수를 선언합니다.
+            var date = new Date();
+            date.setDate(date.getDate() - 1);
+
+            var willCookie = '';
+            willCookie += name + '=remove;';
+            willCookie += 'expires=' + date.toUTCString();
+
+            // 쿠키에 집어넣습니다.
+            document.cookie = willCookie;
+        }
+    </script>
+    <script>
+        removeCookie('Cookie')
+        alert(getCookie('Cookie'));
+        setCookie('Cookie', 'Cheese', 7);
+        alert(getCookie('Cookie'));
+        removeCookie('Cookie')
+    </script>
+</head>
+<body>
+
+</body>
+</html>

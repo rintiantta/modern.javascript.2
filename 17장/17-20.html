@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        div {
+            width: 100px; height: 100px;
+            background-color: orange;
+            position: relative;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('div').each(function (index) {
+                // (index * 500)초 후 animate() 메서드를 실행합니다.
+                $(this).delay(index * 500).animate({
+                    left: 500
+                }, 'slow');
+            });
+        });
+    </script>
+</head>
+<body>
+    <div></div><div></div>
+    <div></div><div></div>
+    <div></div><div></div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        $(document).ready(function () {
+            // 변수를 선언합니다.
+            var content = [
+                { name: '윤인성', region: '서울특별시 강서구' },
+                { name: '윤하린', region: '서울특별시 광진구' },
+                { name: '윤인아', region: '미국 메사추세츠' }
+            ];
+
+            // 문서 객체를 추가합니다.
+            $('div').append(function (index) {
+                // 변수를 선언합니다.
+                var item = content[index];
+                var output = '';
+                output += '<h1>' + item.name + '</h1>';
+                output += '<h2>' + item.region + '</h2>';
+
+                return output;
+            });
+        });
+    </script>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>    
+</body>
+</html>

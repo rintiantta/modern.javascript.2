@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Ajax Basic</title>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: 'data.xml',
+                success: function (data) {
+                    $(data).find('product').each(function () {
+                        // 변수를 선언합니다.
+                        var name = $(this).find('name').text();
+                        var price = $(this).find('price').text();
+
+                        // 출력합니다.
+                        $('<h1></h1>').text(name + ':' + price).appendTo('body')
+                    });
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

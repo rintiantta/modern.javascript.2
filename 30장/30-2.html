@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script>
+        // 변수를 선언합니다.
+        var smartPhones = [
+            'iphone', 'ipod',
+            'windows ce',
+            'android', 'blackberry',
+            'nokia', 'webos',
+            'opera mini', 'sonyerricsson',
+            'opera mobi', 'iemobile'
+        ];
+
+        for (var i in smartPhones) {
+            // 스마트폰 확인
+            if (navigator.userAgent.toLowerCase().match(new RegExp(smartPhones[i]))) {
+                alert('This is Smart Phone..!');
+                document.location = 'http://m.hanb.com';
+            }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

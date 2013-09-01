@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>w2ui Basic</title>
+    <link rel="stylesheet" href="w2ui-1.2.css" />
+    <style>
+        #wrap {
+            margin: 0 auto;
+            width: 960px;
+            height: 500px;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="w2ui-1.2.js"></script>
+    <script>
+        $(document).ready(function () {
+            // 변수를 선언합니다.
+            var style = 'background: gray'
+
+            // 레이아웃 플러그인을 사용합니다.
+            $('#wrap').w2layout({
+                name: 'main',
+                panels: [
+                    { type: 'top', size: 50, style: style },
+                    { type: 'left', size: 200, style: style },
+                    { type: 'main', style: style }
+                ]
+            });
+
+            // 이벤트를 연결합니다.
+            var text = '<h1>Lorem ipsum dolor sit amet.</h1>';
+            var content = '';
+            $(window).click(function () {
+                w2ui.main.toggle('top');
+                w2ui.main.toggle('left');
+                w2ui.main.content('main', (content += text));
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap"></div>
+</body>
+</html>

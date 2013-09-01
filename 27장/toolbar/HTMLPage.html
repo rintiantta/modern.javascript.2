@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>w2ui Basic</title>
+    <link rel="stylesheet" href="w2ui-1.2.css" />
+    <style>
+
+    </style>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="w2ui-1.2.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#toolbar').w2toolbar({
+            name: 'toolbar',
+            items: [{
+                type: 'button',
+                caption: 'Save',
+                img: 'icon-save',
+                onClick: function () { alert('Button Click'); }
+            }, {
+                id: 'item2',
+                type: 'menu',
+                caption: 'Folder',
+                img: 'icon-folder',
+                items: [
+                    { text: 'Item 1', icon: 'icon-page' },
+			        { text: 'Item 2', icon: 'icon-page' },
+			        { text: 'Item 3', icon: 'icon-page' }
+                ]
+            }]
+        });
+    });
+</script>
+</head>
+<body>
+    <div id="toolbar"></div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        $(document).ready(function () {
+            // 이벤트를 연결합니다.
+            $('h1').click(function () {
+                $(this).html(function (index, html) {
+                    return html + '★';
+                });
+            });
+
+            // 1초마다 함수를 실행합니다.
+            setInterval(function () {
+                $('h1').last().click();
+            }, 1000);
+        });
+    </script>
+</head>
+<body>
+    <h1>Start: </h1>
+    <h1>Start: </h1>
+</body>
+</html>

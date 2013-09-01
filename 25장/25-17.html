@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery UI Basic</title>
+    <link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.3.custom.css" />
+    <style>
+        #button { padding: 5px; }
+        #button p { margin: 0px; padding: 5px; text-align: center; }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // hover() 메서드를 적용합니다.
+            $('#button').hover(function () {
+                $(this).addClass('ui-state-hover');
+            }, function () {
+                $(this).removeClass('ui-state-hover');
+            });
+
+            // click() 메서드를 적용합니다.
+            $('#button').click(function () {
+                $(this).toggleClass('ui-state-active');
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="button" class="box ui-state-default ui-corner-all">
+        <p>Lorem ipsum dolor sit amet Button</p>
+    </div>
+</body>
+</html>

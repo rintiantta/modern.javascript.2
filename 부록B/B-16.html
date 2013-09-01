@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   <script>
+        function isKoreanName(string) {
+            // 변수를 선언합니다.
+            var regExp = /([가-힣])/g;
+
+            // 메서드를 사용합니다.
+            var replacedString = string.replace(regExp, '');
+
+            // 확인합니다.
+            if (replacedString.length == 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        alert(isKoreanName('윤인성'));
+    </script>
+</head>
+<body>
+</body>
+</html>

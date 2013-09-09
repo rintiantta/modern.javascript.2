@@ -23,22 +23,8 @@
 다음과 같은 그림입니다. ;ㅁ;
 
 ![ScreenShot](https://raw.github.com/rintiantta/modern.javascript.2/master/github%20%EC%9D%B4%EB%AF%B8%EC%A7%80/8-10.PNG)
- 
-####509페이지: 이예찬님 발견
-표 20-2의 4XX - 설명이 "클라이런트 오류"로 되어있습니다. "클라이언트 오류"로 변경해주세요. ;ㅁ;
 
-
-## 아직 책을 못 받아서 책을 받으면 바로 페이지 넣겠습니다.
-####XXX페이지
-코드 13-20의
-```javascript
-$('body*').css('color', 'red');
-```
-에서 body와 *을 띄어주세요.
-```javascript
-$('body *').css('color', 'red');
-```
-####XXX페이지
+####384페이지
 코드 13-26
 ```javascript
 $('tr:first').css('background', '#000000').css('color', #FFFFFF);
@@ -47,7 +33,8 @@ $('tr:first').css('background', '#000000').css('color', #FFFFFF);
 ```javascript
 $('tr:first').css('background', '#000000').css('color', '#FFFFFF');
 ```
-####XXX페이지
+
+####479페이지
 코드 17-4
 ```html
 <ul id="inner_fade">
@@ -56,7 +43,11 @@ inner_fade를 inner-fade로 변경해주세요.
 ```html
 <ul id="inner-fade">
 ```
-###XXX페이지
+
+####509페이지: 이예찬님 발견
+표 20-2의 4XX - 설명이 "클라이런트 오류"로 되어있습니다. "클라이언트 오류"로 변경해주세요. ;ㅁ;
+
+###582페이지
 중간 코드에는 문제가 없는데 전체 코드 부분에 문제가 있답니다. 'ㅁ'
 코드 19-43
 ```javascript
@@ -92,7 +83,7 @@ app.all('/data.xml', function (request, response) {
 });
 
 ```
-####XXX페이지
+####632페이지
 코드 21-27
 'data.json 문자열의 따옴표가 닫히지 않았습니다.
 'data.json'으로 변경해주세요.
@@ -107,7 +98,7 @@ $.post('/message', $(this).serialize());
 // Ajax를 수행합니다.
 $.post('/messages', $(this).serialize());
 ```
-####XXX페이지
+####688페이지
 코드 24-6
 ```javascript
 $.each(data, function (index, item) {
@@ -126,7 +117,7 @@ $.each(data, function (index, item) {
     $('<div></div>').html(output).prependTo('#output');
 });
 ```
-####XXX페이지
+####712페이지
 코드 25-16
 ```css
 <style>
@@ -141,7 +132,7 @@ $.each(data, function (index, item) {
     .button p { margin: 0px; padding: 5px; text-align: center; }
 </style>
 ```
-####XXX페이지
+####876페이지
 미세 버전에 따라서 작동하지 않는 경우가 있습니다.
 코드 30-62
 ```javascript

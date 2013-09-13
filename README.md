@@ -24,6 +24,16 @@
 
 ![ScreenShot](https://raw.github.com/rintiantta/modern.javascript.2/master/github%20%EC%9D%B4%EB%AF%B8%EC%A7%80/8-10.PNG)
 
+####307페이지
+코드 10-28
+```html
+<h1 id="earth</h1>
+```
+을 다음으로 변경합니다.
+```html
+<h1 id="earth"></h1>
+```
+
 ####384페이지
 코드 13-26
 ```javascript
